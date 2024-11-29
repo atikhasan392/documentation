@@ -45,7 +45,7 @@ This project demonstrates how to build a dynamic website using PHP and MySQL. It
 ### **Setup Instructions**
 1. **Clone the Repository**  
    ```bash
-   git clone [php-documentation](https://github.com/atikhasan27000/php-documentation.git)
+   git clone https://github.com/atikhasan27000/php-documentation.git
    cd php-documentation
    ```
 
