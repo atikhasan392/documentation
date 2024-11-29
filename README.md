@@ -1,5 +1,3 @@
-# README.md
-
 ## Project: PHP-based Dynamic Website
 
 This project demonstrates how to build a dynamic website using PHP and MySQL. It includes various functionalities such as displaying database records, ordering data, form handling, image uploads, and more.
