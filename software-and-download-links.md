@@ -22,6 +22,7 @@
 - [Postman](https://www.postman.com/downloads/)
 - [Git](https://git-scm.com/)
 - [tabbyML](https://www.tabbyml.com/)
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 
 ## 🖌️ Design and Video Tools
 - [Canva (Windows App)](https://www.canva.com/download/windows/)
