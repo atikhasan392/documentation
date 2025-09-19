@@ -7,6 +7,7 @@
 - [FireStorm Utility](https://www.zotac.com/us/product/graphics_card/zotac-gaming-geforce-rtx-5070-solid)
 - [NVIDIA App](https://www.nvidia.com/en-us/software/nvidia-app/)
 - [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit)
+- [GlideX](https://www.asus.com/content/glidex/)
 
 ## 🌐 Browsers
 - [Google Chrome](https://www.google.com/chrome/)
