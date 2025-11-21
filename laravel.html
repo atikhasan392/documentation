@@ -14,9 +14,14 @@
     <div class="box">
         <h3>Artisan Console (Laravel Setup)</h3>
         <p>Laravel installation and setup</p>
-        <code>composer create-project --prefer-dist laravel/laravel project_name <br> php artisan storage:link <br> php artisan key:generate <br> php -S 127.0.0.1:8000 -t public <br> php artisan route:list</code>
-        <p>Model, Controller, Middleware, Mail, Event, Job, Component, Migration</p>
-		<code>php artisan make:model User <br> php artisan make:controller UserController --resource <br> php artisan make:middleware MinifyHTML <br> php artisan make:mail ContactMail <br> php artisan make:event UserStore <br> php artisan make:job SendEmailJob <br> php artisan make:component DashboardHeader <br> php artisan make:migration create_users_table</code>
+        <code>composer create-project --prefer-dist laravel/laravel project_name <br> curl -s "https://laravel.build/project_name" | bash <br> php artisan storage:link <br> php artisan key:generate <br> php -S 127.0.0.1:8000 -t public <br> php artisan route:list</code>
+        <p>Model, Controller, Middleware, Mail, Event, Job, Work, Component, Migration</p>
+		<code>php artisan make:model User <br> php artisan make:controller UserController --resource <br> php artisan make:middleware MinifyHTML <br> php artisan make:mail ContactMail <br> php artisan make:event UserStore <br> php artisan make:job SendEmailJob <br> php artisan queue:work <br> php artisan make:component DashboardHeader <br> php artisan make:migration create_users_table</code>
+    </div>
+
+    <div class="box">
+        <h3>Laravel Sail</h3>
+        <code>curl -s "https://laravel.build/project_name" | bash <br> alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'</code>
     </div>
 
     <div class="box">
@@ -55,4 +60,3 @@
     </div>
 </body>
 </html>
-
