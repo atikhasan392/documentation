@@ -17,6 +17,7 @@
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Notepad++](https://notepad-plus-plus.org/)
 - [Node.js](https://nodejs.org/en)
+- [Docker](https://www.docker.com/)
 - [XAMPP](https://www.apachefriends.org/)
 - [Composer](https://getcomposer.org/)
 - [Postman](https://www.postman.com/downloads/)
@@ -33,6 +34,7 @@
 - [WinRAR](https://www.win-rar.com/)
 - [7-Zip](https://www.7-zip.org/)
 - [PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/)
+- [RAMMap](https://learn.microsoft.com/en-us/sysinternals/downloads/rammap)
 
 ## 💬 Communication
 - [WhatsApp Desktop](https://www.whatsapp.com/download)
