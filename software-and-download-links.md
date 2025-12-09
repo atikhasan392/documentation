@@ -19,6 +19,7 @@
 - [Node.js](https://nodejs.org/en)
 - [Docker](https://www.docker.com/)
 - [XAMPP](https://www.apachefriends.org/)
+- [PHP](https://www.php.net/)
 - [Composer](https://getcomposer.org/)
 - [Postman](https://www.postman.com/downloads/)
 - [Git](https://git-scm.com/)
