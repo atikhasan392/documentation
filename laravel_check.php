@@ -1,6 +1,6 @@
 <?php
 // ----------------------------------
-// Laravel Full Environment Checker - OPcache Removed (Software Check Combined)
+// Laravel Full Environment Checker
 // ----------------------------------
 
 $required_php_version = '8.1';
@@ -135,7 +135,7 @@ if (!empty($missing_extensions)) {
 divider();
 
 // ---------------------------------------
-// 3. PHP Recommended Settings (Custom Aligned Output)
+// 3. PHP Recommended Settings
 // ---------------------------------------
 cli_echo("3. PHP Recommended Settings Check", 'yellow');
 
