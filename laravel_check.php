@@ -23,6 +23,7 @@ $required_extensions = [
     'tokenizer',
     'xml',
     'zip',
+    'mysqli',
 ];
 
 function cli_echo($text, $color = null)
@@ -202,3 +203,4 @@ cli_echo("3. After setup, install Laravel via Composer", 'green');
 divider();
 cli_echo("✔  Environment check completed", 'blue');
 divider();
+
