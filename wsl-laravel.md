@@ -29,6 +29,9 @@ composer -V
 ## Node.js (Laravel Vite / JS bundling)
 
 ```sh
+sudo apt update
+sudo apt install unzip -y
+
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
 node -v
@@ -50,4 +53,5 @@ composer create-project laravel/laravel test-app
 cd test-app
 bun install
 php artisan serve
+
 ```
