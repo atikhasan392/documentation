@@ -49,9 +49,8 @@ bun -v
 ## Laravel project test
 
 ```sh
-composer create-project laravel/laravel test-app
+composer create-project --prefer-dist laravel/laravel project_name
 cd test-app
 bun install
 php artisan serve
-
 ```
