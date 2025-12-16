@@ -111,13 +111,19 @@ sudo wget https://files.phpmyadmin.net/phpMyAdmin/5.2.3/phpMyAdmin-5.2.3-all-lan
 sudo tar xzf phpMyAdmin-5.2.3-all-languages.tar.gz
 sudo mv phpMyAdmin-5.2.3-all-languages phpmyadmin
 sudo chown -R www-data:www-data phpmyadmin
+
+# Create TempDir and fix permissions
+sudo mkdir -p /var/www/html/phpmyadmin/tmp
+sudo chown -R www-data:www-data /var/www/html/phpmyadmin/tmp
+sudo chmod 777 /var/www/html/phpmyadmin/tmp
+
 sudo rm phpMyAdmin-5.2.3-all-languages.tar.gz
 ```
 
 Run built-in PHP server for phpMyAdmin:
 
 ```bash
-cd ./var/www/html/phpmyadmin/
+cd /var/www/html/phpmyadmin
 php -S 127.0.0.1:8080
 ```
 
@@ -133,13 +139,20 @@ sudo nano config.inc.php
 Set inside `config.inc.php`:
 
 ```php
+$cfg['blowfish_secret'] = 'JOFw435365IScA&Q!cDugr!lSfuAz*OW'; // any long random string
+$i = 0;
+$i++;
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
 $cfg['Servers'][$i]['host'] = '127.0.0.1';
 $cfg['Servers'][$i]['user'] = 'root';
 $cfg['Servers'][$i]['password'] = 'root';
+
+$cfg['TempDir'] = '/var/www/html/phpmyadmin/tmp';
+$cfg['UploadDir'] = '';
+$cfg['SaveDir'] = '';
 ```
 
-Edit systemd service file
+Edit systemd service file:
 
 ```bash
 sudo nano /etc/systemd/system/phpmyadmin-dev.service
@@ -162,10 +175,11 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-systemd reload + restart
+Systemd reload + restart:
 
 ```bash
 sudo systemctl daemon-reload
+sudo systemctl enable phpmyadmin-dev
 sudo systemctl restart phpmyadmin-dev
 sudo systemctl status phpmyadmin-dev
 ```
