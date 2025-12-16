@@ -39,6 +39,7 @@ cd ~
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php
 sudo mv composer.phar /usr/local/bin/composer
+sudo rm composer-setup.php
 composer -V
 ```
 
@@ -110,6 +111,15 @@ sudo wget https://files.phpmyadmin.net/phpMyAdmin/5.2.3/phpMyAdmin-5.2.3-all-lan
 sudo tar xzf phpMyAdmin-5.2.3-all-languages.tar.gz
 sudo mv phpMyAdmin-5.2.3-all-languages phpmyadmin
 sudo chown -R www-data:www-data phpmyadmin
+cd /home/ore
+sudo rm phpMyAdmin-5.2.3-all-languages.tar.gz
+
+cd /var/www
+sudo wget https://files.phpmyadmin.net/phpMyAdmin/5.2.3/phpMyAdmin-5.2.3-all-languages.tar.gz
+sudo tar xzf phpMyAdmin-5.2.3-all-languages.tar.gz
+sudo mv phpMyAdmin-5.2.3-all-languages phpmyadmin
+sudo chown -R www-data:www-data phpmyadmin
+sudo rm phpMyAdmin-5.2.3-all-languages.tar.gz
 ```
 
 Run built-in PHP server for phpMyAdmin:
