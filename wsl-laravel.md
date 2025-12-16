@@ -46,7 +46,7 @@ composer -V
 
 ## 4. Node.js (LTS)
 
-Install Node LTS for Laravel Vite.
+Install Node Current 25.2.1 for Laravel Vite.
 
 ```bash
 sudo npm install -g n
@@ -179,5 +179,6 @@ Access via browser: `http://127.0.0.1:8000`
 * Built-in PHP server used for both Laravel and phpMyAdmin, avoids PHP version conflicts.
 * Bun reduces `node_modules` size and speeds up Vite builds.
 * Docker is **not required** for fast local development.
+
 
 
