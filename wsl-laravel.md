@@ -1,50 +1,40 @@
-# Laravel 12 + MySQL (Ubuntu Full Setup Guide)
+# Laravel 12 + PHP 8.4 + MySQL 8 + phpMyAdmin Setup Guide (Ubuntu / WSL)
 
-## System Update
+## 1. System Update & Required Tools
 
-```sh
+Update Ubuntu and install essential tools.
+
+```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y software-properties-common ca-certificates curl gnupg lsb-release unzip
 ```
 
 ---
 
-## PHP 8.4 (Recommended for Laravel 12)
+## 2. PHP 8.4 Installation
 
-Ondřej Surý PPA is used because Ubuntu’s default repositories are always behind when it comes to PHP versions.
+Use Ondřej Surý PPA for latest PHP 8.4 compatible with Laravel 12.
 
-```sh
+```bash
 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt update
-```
-
-### PHP + Required Extensions (Optimized for Laravel 12)
-
-```sh
 sudo apt install -y \
 php8.4 php8.4-cli php8.4-fpm \
 php8.4-mysql php8.4-sqlite3 \
 php8.4-xml php8.4-curl php8.4-mbstring \
 php8.4-zip php8.4-bcmath php8.4-intl \
 php8.4-gd php8.4-opcache php8.4-readline
-```
-
-### Verify PHP Installation
-
-```sh
+sudo update-alternatives --set php /usr/bin/php8.4
 php -v
-php -m
 ```
-
-Expected output: **PHP 8.4.x CLI**
 
 ---
 
-## Composer (Latest Stable)
+## 3. Composer Installation
 
-Do **not** use the Composer version from Ubuntu repositories. It is outdated and unreliable for modern Laravel projects.
+Install latest Composer system-wide.
 
-```sh
+```bash
 cd ~
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php
@@ -52,30 +42,26 @@ sudo mv composer.phar /usr/local/bin/composer
 composer -V
 ```
 
-Expected output: **Composer 2.x (latest stable)**
-
 ---
 
-## Node.js (Required for Laravel Vite)
+## 4. Node.js (LTS)
 
-NodeSource repository is used to ensure the latest **LTS** version.
+Install Node LTS for Laravel Vite.
 
-```sh
+```bash
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt install -y nodejs
 node -v
 npm -v
 ```
 
-Note: Laravel does **not** need bleeding-edge Node versions. LTS is the correct choice for stability.
-
 ---
 
-## Bun (Fast Alternative to npm/yarn)
+## 5. Bun Installation
 
-Bun provides faster installs, smaller `node_modules`, and works perfectly with Laravel + Vite.
+Install Bun for fast frontend dependency management.
 
-```sh
+```bash
 curl -fsSL https://bun.sh/install | bash
 source ~/.bashrc
 bun -v
@@ -83,63 +69,80 @@ bun -v
 
 ---
 
-## MySQL 8 (Production-grade)
+## 6. MySQL 8 Installation
 
-Ubuntu’s MySQL package is stable and fully compatible with Laravel.
+Install MySQL server and enable it.
 
-```sh
+```bash
 sudo apt install -y mysql-server
 sudo systemctl enable mysql
 sudo systemctl start mysql
 mysql --version
 ```
 
-### Secure MySQL Installation
+Set root password compatible with phpMyAdmin:
 
-```sh
-sudo mysql_secure_installation
+```bash
+sudo mysql
+```
+
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+FLUSH PRIVILEGES;
+EXIT;
 ```
 
 ---
 
-## phpMyAdmin
+## 7. phpMyAdmin Installation (Manual, PHP 8.4 Compatible)
 
-Installed with Apache dependency. This is acceptable for **development environments only**.
+Download and extract phpMyAdmin manually to avoid PHP downgrade.
 
-```sh
-sudo apt install -y phpmyadmin
+```bash
+cd /var/www
+sudo wget https://files.phpmyadmin.net/phpMyAdmin/5.2.3/phpMyAdmin-5.2.3-all-languages.tar.gz
+sudo tar xzf phpMyAdmin-5.2.3-all-languages.tar.gz
+sudo mv phpMyAdmin-5.2.3-all-languages phpmyadmin
+sudo chown -R www-data:www-data phpmyadmin
 ```
 
-During installation:
+Run built-in PHP server for phpMyAdmin:
 
-* Web server: **apache2**
-* Configure database with dbconfig-common: **Yes**
+```bash
+cd /var/www/phpmyadmin
+php -S 127.0.0.1:8080
+```
 
-Access via browser:
+Access via browser: `http://127.0.0.1:8080`
 
-```sh
-http://localhost/phpmyadmin
+Configure database connection:
+
+```bash
+sudo cp config.sample.inc.php config.inc.php
+sudo nano config.inc.php
+```
+
+Set inside `config.inc.php`:
+
+```php
+$cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['Servers'][$i]['host'] = '127.0.0.1';
+$cfg['Servers'][$i]['user'] = 'root';
+$cfg['Servers'][$i]['password'] = 'root';
 ```
 
 ---
 
-## Create Laravel 12 Project
+## 8. Create Laravel 12 Project
 
-Composer will automatically download the latest stable Laravel version.
-
-```sh
+```bash
 composer create-project laravel/laravel project_name
 cd project_name
-```
-
-### Environment Setup
-
-```sh
 cp .env.example .env
 php artisan key:generate
 ```
 
-### Database Configuration (`.env`)
+Configure `.env` for MySQL:
 
 ```env
 DB_CONNECTION=mysql
@@ -147,45 +150,32 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=laravel
 DB_USERNAME=root
-DB_PASSWORD=
+DB_PASSWORD=root
 ```
 
 ---
 
-## Frontend Dependencies (Using Bun)
+## 9. Frontend Dependencies
 
-```sh
+```bash
 bun install
 bun run dev
 ```
 
 ---
 
-## Laravel Development Server
+## 10. Laravel Development Server
 
-```sh
+```bash
 php artisan serve
 ```
 
-Open in browser:
-
-```sh
-http://127.0.0.1:8000
-```
+Access via browser: `http://127.0.0.1:8000`
 
 ---
 
-## Performance Notes (Straight Talk)
+## Notes
 
-* Running Laravel **without Docker** gives the fastest local development experience
-* PHP-FPM is already installed, so switching to Nginx or Apache later is effortless
-* Bun significantly reduces install time and disk usage
-* Native MySQL provides lower I/O latency than containerized setups
-
----
-
-## This Setup Is NOT For
-
-* Developers stuck in a Windows-only mindset
-* People who feel insecure without Docker
-* Anyone who does not understand the difference between development and production environments
+* Built-in PHP server used for both Laravel and phpMyAdmin, avoids PHP version conflicts.
+* Bun reduces `node_modules` size and speeds up Vite builds.
+* Docker is **not required** for fast local development.
