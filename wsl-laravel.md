@@ -139,6 +139,29 @@ $cfg['Servers'][$i]['user'] = 'root';
 $cfg['Servers'][$i]['password'] = 'root';
 ```
 
+Edit systemd service file
+
+```bash
+sudo nano /etc/systemd/system/phpmyadmin-dev.service
+```
+
+Write this inside:
+
+```ini
+[Unit]
+Description=PHP Built-in Server for phpMyAdmin
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/var/www/phpmyadmin
+ExecStart=/usr/bin/php -S 127.0.0.1:8080
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ---
 
 ## 8. Git Update (Latest Version)
