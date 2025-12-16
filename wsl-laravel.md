@@ -117,7 +117,7 @@ sudo rm phpMyAdmin-5.2.3-all-languages.tar.gz
 Run built-in PHP server for phpMyAdmin:
 
 ```bash
-cd /var/www/phpmyadmin
+cd /phpmyadmin
 php -S 127.0.0.1:8080
 ```
 
@@ -149,4 +149,5 @@ sudo apt update
 sudo apt install -y git
 git --version
 ```
+
 
