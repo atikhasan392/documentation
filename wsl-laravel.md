@@ -117,7 +117,7 @@ sudo rm phpMyAdmin-5.2.3-all-languages.tar.gz
 Run built-in PHP server for phpMyAdmin:
 
 ```bash
-cd ./phpmyadmin/
+cd ./var/www/html/phpmyadmin/
 php -S 127.0.0.1:8080
 ```
 
@@ -154,7 +154,7 @@ After=network.target
 
 [Service]
 User=ore
-WorkingDirectory=/home/ore/phpmyadmin
+WorkingDirectory=/var/www/html/phpmyadmin
 ExecStart=/usr/bin/php -S 127.0.0.1:8080
 Restart=always
 
