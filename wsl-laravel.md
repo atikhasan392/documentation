@@ -139,54 +139,11 @@ $cfg['Servers'][$i]['password'] = 'root';
 
 ---
 
-## 8. Create Laravel 12 Project
+## 8. Git Update (Latest Version)
 
 ```bash
-composer create-project laravel/laravel project_name
-cd project_name
-cp .env.example .env
-php artisan key:generate
+sudo add-apt-repository -y ppa:git-core/ppa
+sudo apt update
+sudo apt install -y git
+git --version
 ```
-
-Configure `.env` for MySQL:
-
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=root
-```
-
----
-
-## 9. Frontend Dependencies
-
-```bash
-bun install
-bun run dev
-```
-
----
-
-## 10. Laravel Development Server
-
-```bash
-php artisan serve
-```
-
-Access via browser: `http://127.0.0.1:8000`
-
----
-
-## Notes
-
-* Built-in PHP server used for both Laravel and phpMyAdmin, avoids PHP version conflicts.
-* Bun reduces `node_modules` size and speeds up Vite builds.
-* Docker is **not required** for fast local development.
-
-
-
-
-
