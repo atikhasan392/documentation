@@ -153,13 +153,21 @@ Description=PHP Built-in Server for phpMyAdmin
 After=network.target
 
 [Service]
-User=www-data
-WorkingDirectory=/var/www/phpmyadmin
+User=ore
+WorkingDirectory=/home/ore/phpmyadmin
 ExecStart=/usr/bin/php -S 127.0.0.1:8080
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
+```
+
+systemd reload + restart
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart phpmyadmin-dev
+sudo systemctl status phpmyadmin-dev
 ```
 
 ---
@@ -172,6 +180,3 @@ sudo apt update
 sudo apt install -y git
 git --version
 ```
-
-
-
