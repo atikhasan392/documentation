@@ -111,14 +111,6 @@ sudo wget https://files.phpmyadmin.net/phpMyAdmin/5.2.3/phpMyAdmin-5.2.3-all-lan
 sudo tar xzf phpMyAdmin-5.2.3-all-languages.tar.gz
 sudo mv phpMyAdmin-5.2.3-all-languages phpmyadmin
 sudo chown -R www-data:www-data phpmyadmin
-cd /home/ore
-sudo rm phpMyAdmin-5.2.3-all-languages.tar.gz
-
-cd /var/www
-sudo wget https://files.phpmyadmin.net/phpMyAdmin/5.2.3/phpMyAdmin-5.2.3-all-languages.tar.gz
-sudo tar xzf phpMyAdmin-5.2.3-all-languages.tar.gz
-sudo mv phpMyAdmin-5.2.3-all-languages phpmyadmin
-sudo chown -R www-data:www-data phpmyadmin
 sudo rm phpMyAdmin-5.2.3-all-languages.tar.gz
 ```
 
@@ -157,3 +149,4 @@ sudo apt update
 sudo apt install -y git
 git --version
 ```
+
