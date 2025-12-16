@@ -49,11 +49,8 @@ composer -V
 Install Node LTS for Laravel Vite.
 
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-sudo apt install -y nodejs
-
-# Updating npm
-sudo npm install -g npm@latest
+sudo npm install -g n
+sudo n 25.2.1
 node -v
 npm -v
 ```
@@ -182,4 +179,5 @@ Access via browser: `http://127.0.0.1:8000`
 * Built-in PHP server used for both Laravel and phpMyAdmin, avoids PHP version conflicts.
 * Bun reduces `node_modules` size and speeds up Vite builds.
 * Docker is **not required** for fast local development.
+
 
