@@ -180,3 +180,8 @@ sudo apt update
 sudo apt install -y git
 git --version
 ```
+
+```bash
+git config --global user.name "ATik HaSan"
+git config --global user.email "atikhasan2700@gmail.com"
+```
