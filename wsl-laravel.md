@@ -139,13 +139,13 @@ sudo nano config.inc.php
 Set inside `config.inc.php`:
 
 ```php
-$cfg['blowfish_secret'] = 'JOFw435365IScA&Q!cDugr!lSfuAz*OW'; // any long random string
+$cfg['blowfish_secret'] = 'JOFw435365IScA&Q!cDugr!lSfuAz*OW'; // keep any long random string
 $i = 0;
 $i++;
-$cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['Servers'][$i]['auth_type'] = 'config';      // changed from 'cookie' to 'config'
 $cfg['Servers'][$i]['host'] = '127.0.0.1';
-$cfg['Servers'][$i]['user'] = 'root';
-$cfg['Servers'][$i]['password'] = 'root';
+$cfg['Servers'][$i]['user'] = 'root';            // your MySQL username
+$cfg['Servers'][$i]['password'] = 'root';        // your MySQL password
 
 $cfg['TempDir'] = '/var/www/html/phpmyadmin/tmp';
 $cfg['UploadDir'] = '';
@@ -199,3 +199,4 @@ git --version
 git config --global user.name "ATik HaSan"
 git config --global user.email "atikhasan2700@gmail.com"
 ```
+
