@@ -53,6 +53,10 @@ cd /tmp
 curl -O https://nodejs.org/dist/v25.2.1/node-v25.2.1-linux-x64.tar.xz
 tar -xf node-v25.2.1-linux-x64.tar.xz
 sudo cp -r node-v25.2.1-linux-x64/* /usr/local/
+
+sudo apt update
+sudo apt install -y libatomic1
+
 node -v
 npm -v
 ```
@@ -181,6 +185,7 @@ Access via browser: `http://127.0.0.1:8000`
 * Built-in PHP server used for both Laravel and phpMyAdmin, avoids PHP version conflicts.
 * Bun reduces `node_modules` size and speeds up Vite builds.
 * Docker is **not required** for fast local development.
+
 
 
 
