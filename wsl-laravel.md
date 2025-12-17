@@ -165,7 +165,7 @@ After=network.target
 
 [Service]
 User=ore
-WorkingDirectory=/var/www/html/phpmyadmin
+WorkingDirectory=/var/www/phpmyadmin
 ExecStart=/usr/bin/php -S 127.0.0.1:8080
 Restart=always
 
@@ -197,6 +197,7 @@ git --version
 git config --global user.name "ATik HaSan"
 git config --global user.email "atikhasan2700@gmail.com"
 ```
+
 
 
 
