@@ -110,20 +110,16 @@ cd /var/www
 sudo wget https://files.phpmyadmin.net/phpMyAdmin/5.2.3/phpMyAdmin-5.2.3-all-languages.tar.gz
 sudo tar xzf phpMyAdmin-5.2.3-all-languages.tar.gz
 sudo mv phpMyAdmin-5.2.3-all-languages phpmyadmin
-sudo chown -R www-data:www-data phpmyadmin
-
-# Create TempDir and fix permissions
-sudo mkdir -p /var/www/html/phpmyadmin/tmp
-sudo chown -R www-data:www-data /var/www/html/phpmyadmin/tmp
-sudo chmod 777 /var/www/html/phpmyadmin/tmp
-
 sudo rm phpMyAdmin-5.2.3-all-languages.tar.gz
+sudo mkdir -p /var/www/phpmyadmin/tmp
+sudo chown -R www-data:www-data /var/www/phpmyadmin
+sudo chmod 777 /var/www/phpmyadmin/tmp
 ```
 
 Run built-in PHP server for phpMyAdmin:
 
 ```bash
-cd /var/www/html/phpmyadmin
+cd /var/www/phpmyadmin
 php -S 127.0.0.1:8080
 ```
 
@@ -149,7 +145,7 @@ $cfg['Servers'][$i]['host'] = '127.0.0.1';
 $cfg['Servers'][$i]['user'] = 'root';
 $cfg['Servers'][$i]['password'] = 'root';
 
-$cfg['TempDir'] = '/var/www/html/phpmyadmin/tmp';
+$cfg['TempDir'] = '/var/www/phpmyadmin/tmp';
 $cfg['UploadDir'] = '';
 $cfg['SaveDir'] = '';
 ```
@@ -201,5 +197,6 @@ git --version
 git config --global user.name "ATik HaSan"
 git config --global user.email "atikhasan2700@gmail.com"
 ```
+
 
 
