@@ -198,6 +198,9 @@ git config --global user.name "ATik HaSan"
 git config --global user.email "atikhasan2700@gmail.com"
 ```
 
+## 9. Install GitHub CLI:
 
-
-
+```bash
+sudo apt install gh
+gh auth login
+```
