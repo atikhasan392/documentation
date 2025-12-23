@@ -127,7 +127,8 @@ $i++;
 $cfg['Servers'][$i]['auth_type'] = 'config';
 $cfg['Servers'][$i]['host'] = '127.0.0.1';
 $cfg['Servers'][$i]['user'] = 'root';
-$cfg['Servers'][$i]['password'] = 'root';
+$cfg['Servers'][$i]['password'] = '';
+$cfg['Servers'][$i]['AllowNoPassword'] = true;
 
 $cfg['TempDir'] = '/var/www/html/phpmyadmin/tmp';
 $cfg['UploadDir'] = '';
@@ -171,4 +172,5 @@ npm -v # 11.6.2
 bun -v # 1.3.5
 mysql --version # 8.0.44
 ```
+
 
