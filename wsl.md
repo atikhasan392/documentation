@@ -89,7 +89,7 @@ sudo mysql
 ```
 
 ```sql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
 ALTER USER 'root'@'localhost' IDENTIFIED BY '';
 FLUSH PRIVILEGES;
 EXIT;
@@ -172,5 +172,6 @@ npm -v # 11.6.2
 bun -v # 1.3.5
 mysql --version # 8.0.44
 ```
+
 
 
