@@ -95,7 +95,14 @@ FLUSH PRIVILEGES;
 EXIT;
 ```
 
-## 7. phpMyAdmin Installation (Manual, PHP 8.4 Compatible)
+### 7. Apache 2 Installation
+
+```bash
+sudo apt update
+sudo apt install apache2
+```
+
+## 8. phpMyAdmin Installation (Manual, PHP 8.4 Compatible)
 
 ```bash
 cd /var/www/html
@@ -142,7 +149,7 @@ php -S 127.0.0.1:8080
 
 Access via browser: `http://127.0.0.1:8080`
 
-## 8. Git Update (Latest Version)
+## 9. Git Update (Latest Version)
 
 ```bash
 sudo add-apt-repository -y ppa:git-core/ppa
@@ -155,7 +162,7 @@ git config --global user.name "ATik HaSan"
 git config --global user.email "atikhasan2700@gmail.com"
 ```
 
-## 9. Install GitHub CLI
+## 10. Install GitHub CLI
 
 ```bash
 sudo apt install gh
@@ -172,6 +179,7 @@ npm -v # 11.6.2
 bun -v # 1.3.5
 mysql --version # 8.0.44
 ```
+
 
 
 
