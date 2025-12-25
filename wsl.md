@@ -114,6 +114,7 @@ sudo rm phpMyAdmin-5.2.3-all-languages.tar.gz
 sudo mkdir -p /var/www/html/phpmyadmin/tmp
 sudo chown -R www-data:www-data /var/www/html/phpmyadmin
 sudo chmod 777 /var/www/html/phpmyadmin/tmp
+cd phpmyadmin
 ```
 
 Configure database connection:
@@ -179,6 +180,7 @@ npm -v # 11.6.2
 bun -v # 1.3.5
 mysql --version # 8.0.44
 ```
+
 
 
 
