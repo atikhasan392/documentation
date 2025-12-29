@@ -179,7 +179,9 @@ node -v # v25.2.1
 npm -v # 11.6.2
 bun -v # 1.3.5
 mysql --version # 8.0.44
+redis-cli --version # 7.0.15
 ```
+
 
 
 
