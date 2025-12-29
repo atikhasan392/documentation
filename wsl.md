@@ -22,7 +22,7 @@ sudo apt install -y php8.4
 Install PHP extensions
 
 ```bash
-sudo apt install -y php8.4-bcmath php8.4-curl php8.4-dom php8.4-gd php8.4-mbstring php8.4-mysql php8.4-pdo-mysql php8.4-pdo-sqlite php8.4-xml php8.4-zip php8.4-mysqli
+sudo apt install -y php8.4-bcmath php8.4-curl php8.4-dom php8.4-gd php8.4-mbstring php8.4-mysql php8.4-pdo-mysql php8.4-pdo-sqlite php8.4-xml php8.4-zip php8.4-mysqli php8.4-redis
 ```
 
 To check all extensions
@@ -180,6 +180,7 @@ npm -v # 11.6.2
 bun -v # 1.3.5
 mysql --version # 8.0.44
 ```
+
 
 
 
