@@ -48,6 +48,15 @@
         <h3>Livewire 3 Integration</h3>
         <code>composer require livewire/livewire <br> php artisan livewire:publish --config <br> php artisan livewire:layout <br> php artisan make:livewire header --inline <br> php artisan livewire:publish --assets</code>
     </div>
+	
+	<div class="box">
+        <h3>Redis Cache</h3>
+		<p>Common Commands</p>
+        <code>redis-cli <br> KEYS * <br> SELECT 1 <br> GET cache_key <br> TTL cache_key <br> DEL cache_key <br> DBSIZE</code>
+		<p>Clear Redis Data</p>
+		<code>FLUSHDB <br> FLUSHALL</code>
+		<p>Warning: Running `FLUSHALL` in production will delete all Redis data across databases. Use with extreme caution.</p>
+    </div>
 
 	<div class="box">
         <h3>Others</h3>
