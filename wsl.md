@@ -12,7 +12,8 @@ sudo apt install -y software-properties-common ca-certificates curl gnupg lsb-re
 ```bash
 sudo apt install neofetch
 nano ~/.bashrc
-# Add at the bottom of the file:
+
+// Add at the bottom of the file:
 neofetch
 ```
 
@@ -189,4 +190,5 @@ mysql --version # 8.0.44
 git -v # 2.52.0
 redis-cli --version # 7.0.15
 ```
+
 
