@@ -9,6 +9,13 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y software-properties-common ca-certificates curl gnupg lsb-release unzip
 ```
 
+```bash
+sudo apt install neofetch
+nano ~/.bashrc
+# Add at the bottom of the file:
+neofetch
+```
+
 ## 2. PHP 8.4 Installation
 
 ```bash
@@ -182,3 +189,4 @@ mysql --version # 8.0.44
 git -v # 2.52.0
 redis-cli --version # 7.0.15
 ```
+
