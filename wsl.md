@@ -1,11 +1,4 @@
-```bash
-sudo apt-get install lsb-release curl gpg
-curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-sudo chmod 644 /usr/share/keyrings/redis-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
-sudo apt-get update
-sudo apt-get install redis# Ubuntu-24.4 LTS / WSL 2
-```
+# WSL SETUP
 
 ## 1. System Update & Required Tools
 
@@ -208,6 +201,7 @@ mysql --version # 8.0.44
 git -v # 2.52.0
 redis-cli --version # 7.0.15
 ```
+
 
 
 
